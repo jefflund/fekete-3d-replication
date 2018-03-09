@@ -43,7 +43,9 @@ bars = [ax.bar3d(x, y, 0, .8, .8, z, picker=1, zsort='max') for x, y, z in zip(x
 def on_draw(_):
     camera = get_camera(ax)
     z_order = get_distances(camera)
-    for bar, z_val in zip(bars, max(z_order) - z_order):
+    if ax.elev > 0:
+        z_order = max(z_order) - z_order
+    for bar, z_val in zip(bars, z_order):
         bar._sort_zpos = z_val
 on_draw(None)
 
