@@ -20,7 +20,6 @@ zs = data[xs, ys]
 
 # https://stackoverflow.com/questions/18602660/matplotlib-bar3d-clipping-problems
 def get_camera(axis):
-    '''returns the camera position for 3D axes in spherical coordinates'''
     r = np.square(np.max([axis.get_xlim(), axis.get_ylim()], 1)).sum()
     theta, phi = np.radians((90-axis.elev, axis.azim))
 
@@ -40,21 +39,42 @@ fig = plt.figure(figsize=(8, 8))
 ax = fig.add_subplot(111, projection='3d')
 bars = [ax.bar3d(x, y, 0, .8, .8, z, picker=1, zsort='max') for x, y, z in zip(xs, ys, zs)]
 
-def on_draw(_):
+def on_draw(event):
     camera = get_camera(ax)
     z_order = get_distances(camera)
     if ax.elev > 0:
         z_order = max(z_order) - z_order
     for bar, z_val in zip(bars, z_order):
         bar._sort_zpos = z_val
+    # closest z order in picked -> red
+    # else -> black
 on_draw(None)
 
+picked = []
+highlight = None
+
+def on_press(event):
+    global picked
+    global highlight
+
+    if not picked:
+        return
+
+    if highlight:
+        highlight.set_edgecolor('black')
+
+    highlight = max(picked, key=lambda a: a._sort_zpos)
+    highlight.set_edgecolor('red')
+
+    picked = []
+    fig.canvas.draw()
+
 def on_pick(event):
-    pass
-    # event.artist.set_edgecolor('red')
-    # fig.canvas.draw()
+    global picked
+    picked.append(event.artist)
 
 fig.canvas.mpl_connect('draw_event', on_draw)
+fig.canvas.mpl_connect('button_press_event', on_press)
 fig.canvas.mpl_connect('pick_event', on_pick)
 
 plt.show()
