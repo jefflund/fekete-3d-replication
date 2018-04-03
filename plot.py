@@ -63,7 +63,11 @@ def on_press(event):
     if highlight:
         highlight.set_edgecolor('black')
 
-    highlight = max(picked, key=lambda a: a._sort_zpos)
+    if ax.elev > 0:
+        highlight = max(picked, key=lambda a: a._sort_zpos)
+    else:
+        highlight = min(picked, key=lambda a: a._sort_zpos)
+
     highlight.set_edgecolor('red')
 
     picked = []
