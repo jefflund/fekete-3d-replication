@@ -5,17 +5,23 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 def plot_the_stupid_dataset_in_glorious_3d(dataset_name='agriculturalland'):
-    # Load data from csv
+    # Load raw data from csv
     raw = [row for row in csv.reader(open('datasets/{}.csv'.format(dataset_name)))]
+    meta = [row.strip() for row in open('datasets/{}.metadata'.format(dataset_name))]
+
+    # Load data from csv
     xkeys, raw = raw[0][1:], raw[1:]
     ykeys = [row[0] for row in raw]
     data = np.array([[float(x) for x in row[1:]] for row in raw])
 
     # Load colors from metadata
-    colors = [row.strip() for row in open('datasets/{}.metadata'.format(dataset_name))]
-    colors = [row.split() for row in colors if row.startswith('<color ')]
+    colors = [row.split() for row in meta if row.startswith('<color ')]
     colors = [row[1:4] for row in colors]
     colors = [tuple(int(x[3:-1])/255 for x in row) for row in colors]
+
+    # Get title from metadata
+    title = [row for row in meta if row.startswith('<title>')][0]
+    title = title[7:-8]
 
     # Numpy-ize the data
     _x = np.arange(data.shape[0])
@@ -47,6 +53,7 @@ def plot_the_stupid_dataset_in_glorious_3d(dataset_name='agriculturalland'):
 
     plt.xticks(np.arange(len(xkeys)), xkeys)
     plt.yticks(np.arange(len(ykeys)), ykeys)
+    plt.title(title)
 
     def on_draw(event):
         camera = get_camera(ax)
@@ -91,3 +98,6 @@ def plot_the_stupid_dataset_in_glorious_3d(dataset_name='agriculturalland'):
     fig.canvas.mpl_connect('pick_event', on_pick)
 
     plt.show()
+
+if __name__ == '__main__':
+    plot_the_stupid_dataset_in_glorious_3d()
