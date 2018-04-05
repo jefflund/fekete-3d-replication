@@ -37,7 +37,10 @@ def get_distances(view):
 
 fig = plt.figure(figsize=(8, 8))
 ax = fig.add_subplot(111, projection='3d')
-bars = [ax.bar3d(x, y, 0, .8, .8, z, picker=1, zsort='max') for x, y, z in zip(xs, ys, zs)]
+bars = [ax.bar3d(x-.5, y-.5, 0, .7, .7, z, picker=1, zsort='max') for x, y, z in zip(xs, ys, zs)]
+
+plt.xticks(np.arange(len(xkeys)), xkeys)
+plt.yticks(np.arange(len(ykeys)), ykeys)
 
 def on_draw(event):
     camera = get_camera(ax)
@@ -61,14 +64,14 @@ def on_press(event):
         return
 
     if highlight:
-        highlight.set_edgecolor('black')
+        highlight.set_edgecolor('none')
 
     if ax.elev > 0:
         highlight = max(picked, key=lambda a: a._sort_zpos)
     else:
         highlight = min(picked, key=lambda a: a._sort_zpos)
 
-    highlight.set_edgecolor('red')
+    highlight.set_edgecolor('black')
 
     picked = []
     fig.canvas.draw()
