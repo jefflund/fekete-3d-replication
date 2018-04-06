@@ -11,25 +11,25 @@
     <style></style>
   </head>
   <body>
+  <div class="container">
     <form action="/ducks">
-        <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-block btn-secondary">
-            <input type="radio" name="options" id="option1" value="A" required> Belgium in 1991
-          </label>
-          <label class="btn btn-block btn-secondary">
-            <input type="radio" name="options" id="option2" value="B" required> Canada in 1996
-          </label>
-          <label class="btn btn-block btn-secondary">
-            <input type="radio" name="options" id="option3" value="C" required> Italy in 1993
-          </label>
+        <div class="row">
+            <div class="btn-group-vertical btn-block btn-lg btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-block btn-lg btn-secondary">
+                <input type="radio" name="response" id="option1" value="A" required> Belgium in 1991
+              </label>
+              <label class="btn btn-block btn-lg btn-secondary">
+                <input type="radio" name="response" id="option2" value="B" required> Canada in 1996
+              </label>
+              <label class="btn btn-block btn-lg btn-secondary">
+                <input type="radio" name="response" id="option3" value="C" required> Italy in 1993
+              </label>
+            </div>
         </div>
-        <button type="submit" class="btn btn-default">Done</button>
+        <div>
+            <button type="submit" class="btn btn-default justify-content-md-center">Done</button>
+        </div>
     </form>
-
-
-    <!--<button type="button" class="btn btn-block">Belgium in 1991</button>-->
-    <!--<button type="button" class="btn btn-block">Canada in 1996</button>-->
-    <!--<button type="button" class="btn btn-block">Italy in 1993</button>-->
-    <!--<button type="button" class="btn btn-primary">Done</button>-->
+  </div>
   </body>
 </html>
