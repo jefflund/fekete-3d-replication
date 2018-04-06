@@ -6,14 +6,17 @@ import subprocess
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     return flask.render_template('index.html', foo=42)
 
+
 @app.route('/data')
 def dataset():
-    subprocess.run(["python3", "plot.py"])
+    subprocess.Popen(["python3", "plot.py"])
     return flask.render_template('data_A.html')
+
 
 if __name__ == '__main__':
     app.run()
