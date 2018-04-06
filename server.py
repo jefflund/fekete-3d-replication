@@ -5,6 +5,7 @@ import subprocess
 
 
 app = Flask(__name__)
+graph_thingy = None
 
 
 @app.route('/')
@@ -14,8 +15,16 @@ def index():
 
 @app.route('/data')
 def dataset():
-    subprocess.Popen(["python3", "plot.py"])
+    global graph_thingy
+    graph_thingy = subprocess.Popen(["python3", "plot.py"])
     return flask.render_template('data_A.html')
+
+
+@app.route('/ducks')
+def foo():
+    if graph_thingy:
+        graph_thingy.kill()
+    return 'Hello World'
 
 
 if __name__ == '__main__':
