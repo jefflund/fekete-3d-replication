@@ -10,7 +10,7 @@ graph_thingy = None
 
 @app.route('/')
 def index():
-    return flask.render_template('index.html', foo=42)
+    return flask.render_template('index.html')
 
 
 @app.route('/intro/<track>')

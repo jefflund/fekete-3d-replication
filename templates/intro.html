@@ -19,15 +19,18 @@
 <body>
 <div class="container">
   <div class="row">
-    <h1>Instructions</h1>
-  </div>
-  <div class="row">
-    <div class="well">
-      Here are the instructions for your next task:
-      Track = {{ track }}
+    <div class="card">
+      <div class="card-header">
+        Instructions
+      </div>
+      <div class="card-body">
+        Here are the instructions for your next task:
+        <br>
+        Track = {{ track }}
+      </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row align-items-center">
     <form action="/{{ next }}">
       <button type="submit" class="btn btn-primary">Next</button>
     </form>
