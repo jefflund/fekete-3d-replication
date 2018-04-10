@@ -13,6 +13,11 @@ def index():
     return flask.render_template('index.html', foo=42)
 
 
+@app.route('/intro/<track>')
+def intro(track):
+    return flask.render_template('intro.html', next='data', track=track)
+
+
 @app.route('/data')
 def dataset():
     global graph_thingy
