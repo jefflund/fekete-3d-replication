@@ -11,7 +11,7 @@ TRACKS = {'U1': ['TP', 'P1', 'TD', 'D2'],
 DATSETS = {'TP': 'homicide',
            'P1': 'carmortality',
            'P2': 'suicide',
-           'TD': 'electricity',
+           'TD': 'externaldebt',
            'D1': 'army',
            'D2': 'hiv'}
 TRANS_ROUTE = {'TP': 'physical/train/',
@@ -74,10 +74,19 @@ def index():
 
 
 @app.route('/intro/<track>')
-def intro(track):
+@app.route('/intro/<track>/<int:intro_idx>')
+def intro(track, intro_idx=0):
     clean_up()
-    nxt = 'trans/{}/0'.format(track)
-    return flask.render_template('intro.html', next=nxt, track=track)
+    if intro_idx == 0:
+        return flask.render_template('intro-A.html', track=track)
+    elif intro_idx == 1:
+        return flask.render_template('intro-B.html', track=track)
+    elif intro_idx == 2:
+        return flask.render_template('intro-C.html', track=track)
+    elif intro_idx == 3:
+        return flask.render_template('play-with-it-digital.html', track=track)
+    elif intro_idx == 4:
+        return flask.render_template('play-with-it-physical.html', track=track)
 
 
 @app.route('/trans/<track>/<int:idx>')
