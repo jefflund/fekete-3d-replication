@@ -60,9 +60,14 @@ def transition_page(track, idx):
 @app.route('/physical/<track>', methods=['GET'])
 @app.route('/physical/train/<track>', methods=['GET'])
 def physical_data(track):
-    info = task_info(track)
+    train = 'train' in request.path
+    if train:
+        task = 'TP'
+    else:
+        task = [t for t in TRACKS[track] if t in ('P1', 'P2')][0]
+    info = task_info(DATSETS[task])
     print('TRACK:', track)
-    print('REQUEST:', request.url, request.path, request.args)
+    print('TASK:', train, task, DATSETS[task])
     return flask.render_template('data.html', data=info)
 
 
