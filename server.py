@@ -32,6 +32,12 @@ def task_info(ds):
     return dict(data)
 
 
+def get_task(track):
+    if 'train' in request.path:
+        return 'TP', TRACKS[track].index('TP')
+    return [(t,i) for i,t in TRACKS[track] if t in ('P1','P2')]
+
+
 # create server
 app = Flask(__name__)
 graph_thingy = None
@@ -60,14 +66,10 @@ def transition_page(track, idx):
 @app.route('/physical/<track>', methods=['GET'])
 @app.route('/physical/train/<track>', methods=['GET'])
 def physical_data(track):
-    train = 'train' in request.path
-    if train:
-        task = 'TP'
-    else:
-        task = [t for t in TRACKS[track] if t in ('P1', 'P2')][0]
+    task, idx = get_task(track)
     info = task_info(DATSETS[task])
     print('TRACK:', track)
-    print('TASK:', train, task, DATSETS[task])
+    print('TASK:', task, DATSETS[task], idx)
     return flask.render_template('data.html', data=info)
 
 
