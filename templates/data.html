@@ -20,13 +20,13 @@
     <div class="card-body">
       <div class="btn-group-vertical btn-block btn-lg btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-block btn-lg btn-secondary">
-          <input type="radio" name="response" id="option1" value="A" required> Belgium in 1991
+          <input type="radio" name="response" id="option1" value="A" required> {{ data['answers'][0] }}
         </label>
         <label class="btn btn-block btn-lg btn-secondary">
-          <input type="radio" name="response" id="option2" value="B" required> Canada in 1996
+          <input type="radio" name="response" id="option2" value="B" required> {{ data['answers'][1] }}
         </label>
         <label class="btn btn-block btn-lg btn-secondary">
-          <input type="radio" name="response" id="option3" value="C" required> Italy in 1993
+          <input type="radio" name="response" id="option3" value="C" required> {{ data['answers'][2] }}
         </label>
       </div>
     </div>
