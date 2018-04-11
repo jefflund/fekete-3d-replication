@@ -1,8 +1,9 @@
 import csv
-
+import argparse
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+
 
 def plot_the_stupid_dataset_in_glorious_3d(dataset_name='agriculturalland'):
     # Load raw data from csv
@@ -99,5 +100,12 @@ def plot_the_stupid_dataset_in_glorious_3d(dataset_name='agriculturalland'):
 
     plt.show()
 
+
 if __name__ == '__main__':
-    plot_the_stupid_dataset_in_glorious_3d()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('dataset', nargs='?', help='the name of the dataset to use')
+    args = parser.parse_args()
+    if not args.dataset:
+        plot_the_stupid_dataset_in_glorious_3d()
+    else:
+        plot_the_stupid_dataset_in_glorious_3d(args.dataset)
