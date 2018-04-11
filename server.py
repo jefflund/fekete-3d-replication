@@ -11,9 +11,15 @@ TRACKS = {'U1': ['TP', 'P1', 'TD', 'D2'],
 DATSETS = {'TP': 'homicide',
            'P1': 'carmortality',
            'P2': 'suicide',
-           'TD': 'co2',
+           'TD': 'electricity',
            'D1': 'army',
            'D2': 'hiv'}
+TRANS_ROUTE = {'TP': 'physical/train/',
+               'P1': 'physical/',
+               'P2': 'physical/',
+               'TD': 'digital/train/',
+               'D1': 'digital/',
+               'D2': 'digital/'}
 
 
 # Helper Functions
@@ -25,6 +31,7 @@ def el_val(k,v):
 
 
 def task_info(ds):
+    """parse the compare task info from XML for the specified dataset"""
     tree = ET.parse('tasks/{}.plist'.format(ds))
     comp = tree.getroot()[0][1][2]  # compare task xml
     i = iter(comp)
@@ -34,8 +41,19 @@ def task_info(ds):
 
 def get_task(track):
     if 'train' in request.path:
-        return 'TP', TRACKS[track].index('TP')
-    return [(t,i) for i,t in enumerate(TRACKS[track]) if t in ('P1','P2')][0]
+        if 'physical' in request.path:
+            return 'TP', TRACKS[track].index('TP')
+        return 'TD', TRACKS[track].index('TD')
+    else:
+        if 'physical' in request.path:
+            return [(t,i) for i,t in enumerate(TRACKS[track]) if t in ('P1','P2')][0]
+        return [(t, i) for i, t in enumerate(TRACKS[track]) if t in ('D1', 'D2')][0]
+
+
+def data_nxt(track, idx):
+    if idx >= 3:
+        return 'finish'
+    return 'trans/{}/{}'.format(track, idx+1)
 
 
 # create server
@@ -43,55 +61,61 @@ app = Flask(__name__)
 graph_thingy = None
 
 
+def clean_up():
+    if graph_thingy:
+        graph_thingy.kill()
+
+
 # server routing
 @app.route('/')
 def index():
-    if graph_thingy:
-        graph_thingy.kill()
+    clean_up()
     return flask.render_template('index.html')
 
 
 @app.route('/intro/<track>')
 def intro(track):
+    clean_up()
     nxt = 'trans/{}/0'.format(track)
     return flask.render_template('intro.html', next=nxt, track=track)
 
 
 @app.route('/trans/<track>/<int:idx>')
 def transition_page(track, idx):
+    clean_up()
     task = TRACKS[track][idx]
-    return flask.render_template('transition.html', next='data', track=track, task=task, idx=idx)
+    nxt = TRANS_ROUTE[task] + track
+    return flask.render_template('transition.html', next=nxt, track=track, task=task, idx=idx)
 
 
 @app.route('/physical/<track>', methods=['GET'])
 @app.route('/physical/train/<track>', methods=['GET'])
 def physical_data(track):
+    clean_up()
     task, idx = get_task(track)
     info = task_info(DATSETS[task])
-    print('TRACK:', track)
-    print('TASK:', task, DATSETS[task], idx)
-    return flask.render_template('data.html', data=info)
+    nxt = data_nxt(track, idx)
+    return flask.render_template('data.html', data=info, next=nxt)
 
 
-
-@app.route('/data')
-def digital_data():
-    # debug xml parsing
-    _ds = 'food'
-    info = task_info(_ds)
-    print(_ds+':', info)
+@app.route('/digital/<track>', methods=['GET'])
+@app.route('/digital/train/<track>', methods=['GET'])
+def digital_data(track):
+    clean_up()
+    task, idx = get_task(track)
+    info = task_info(DATSETS[task])
     # pull up the graph
     global graph_thingy
-    graph_thingy = subprocess.Popen(["python3", "plot.py", _ds])
+    graph_thingy = subprocess.Popen(["python3", "plot.py", DATSETS[task]])
     # return the page
-    return flask.render_template('data.html', data=info)
+    nxt = data_nxt(track, idx)
+    return flask.render_template('data.html', data=info, next=nxt)
 
 
-@app.route('/ducks')
-def foo():
-    if graph_thingy:
-        graph_thingy.kill()
-    return 'Hello World'
+@app.route('/finish')
+def finish():
+    clean_up()
+    return flask.render_template('finish.html')
 
 
 # Main
