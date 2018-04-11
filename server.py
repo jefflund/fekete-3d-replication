@@ -46,7 +46,7 @@ def digital_data():
     global graph_thingy
     graph_thingy = subprocess.Popen(["python3", "plot.py"])
     # return the page
-    return flask.render_template('data_A.html')
+    return flask.render_template('data.html')
 
 
 @app.route('/ducks')
