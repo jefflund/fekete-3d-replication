@@ -35,7 +35,7 @@ def task_info(ds):
 def get_task(track):
     if 'train' in request.path:
         return 'TP', TRACKS[track].index('TP')
-    return [(t,i) for i,t in TRACKS[track] if t in ('P1','P2')]
+    return [(t,i) for i,t in enumerate(TRACKS[track]) if t in ('P1','P2')][0]
 
 
 # create server
