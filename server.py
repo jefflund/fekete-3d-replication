@@ -28,6 +28,8 @@ graph_thingy = None
 # server routing
 @app.route('/')
 def index():
+    if graph_thingy:
+        graph_thingy.kill()
     return flask.render_template('index.html')
 
 
@@ -44,7 +46,7 @@ def digital_data():
     print(_ds+':', info)
     # pull up the graph
     global graph_thingy
-    graph_thingy = subprocess.Popen(["python3", "plot.py"])
+    graph_thingy = subprocess.Popen(["python3", "plot.py", _ds])
     # return the page
     return flask.render_template('data.html', data=info)
 
