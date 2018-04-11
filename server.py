@@ -17,7 +17,7 @@ def task_info(ds):
     comp = tree.getroot()[0][1][2]  # compare task xml
     i = iter(comp)
     data = [el_val(*e) for e in zip(i,i)]
-    return data
+    return dict(data)
 
 
 # create server
@@ -46,7 +46,7 @@ def digital_data():
     global graph_thingy
     graph_thingy = subprocess.Popen(["python3", "plot.py"])
     # return the page
-    return flask.render_template('data.html')
+    return flask.render_template('data.html', data=info)
 
 
 @app.route('/ducks')
