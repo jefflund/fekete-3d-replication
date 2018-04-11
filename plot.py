@@ -10,8 +10,8 @@ def plot_the_stupid_dataset_in_glorious_3d(dataset_name='agriculturalland'):
     meta = [row.strip() for row in open('datasets/{}.metadata'.format(dataset_name))]
 
     # Load data from csv
-    xkeys, raw = raw[0][1:], raw[1:]
-    ykeys = [row[0] for row in raw]
+    ykeys, raw = raw[0][1:], raw[1:]
+    xkeys = [row[0] for row in raw]
     data = np.array([[float(x) for x in row[1:]] for row in raw])
 
     # Load colors from metadata
