@@ -2,9 +2,9 @@ import flask
 from flask import Flask
 import subprocess
 import xml.etree.ElementTree as ET
-# from .plot import plot_the_stupid_dataset_in_glorious_3d
 
 
+# Helper Functions
 def el_val(k,v):
     def _element_value(el):
         d = {'false': False, 'string': el.text, 'key': el.text, 'array': [e.text for e in el]}
@@ -12,7 +12,7 @@ def el_val(k,v):
     return _element_value(k), _element_value(v)
 
 
-def parse_xml(ds):
+def task_info(ds):
     tree = ET.parse('tasks/{}.plist'.format(ds))
     comp = tree.getroot()[0][1][2]  # compare task xml
     i = iter(comp)
@@ -20,10 +20,12 @@ def parse_xml(ds):
     return data
 
 
+# create server
 app = Flask(__name__)
 graph_thingy = None
 
 
+# server routing
 @app.route('/')
 def index():
     return flask.render_template('index.html')
@@ -35,11 +37,11 @@ def intro(track):
 
 
 @app.route('/data')
-def dataset():
+def digital_data():
     # debug xml parsing
-    _ds = 'army'
-    _data = parse_xml(_ds)
-    print(_ds+':', _data)
+    _ds = 'food'
+    info = task_info(_ds)
+    print(_ds+':', info)
     # pull up the graph
     global graph_thingy
     graph_thingy = subprocess.Popen(["python3", "plot.py"])
@@ -54,5 +56,6 @@ def foo():
     return 'Hello World'
 
 
+# Main
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
