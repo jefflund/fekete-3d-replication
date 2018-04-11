@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>correct answer</key>
+			<array>
+				<string>Uzbekistan</string>
+				<string>Suriname</string>
+				<string>Bahrain</string>
+				<string>Martinique</string>
+				<string>Guadeloupe</string>
+			</array>
+			<key>type</key>
+			<string>multi</string>
+			<key>question</key>
+			<string>If you consider all values smaller than 60 as low, which countries have low values at any point in time?</string>
+			<key>answers</key>
+			<array>
+				<string>Cape Verde</string>
+				<string>Mayotte</string>
+				<string>Tajikistan</string>
+				<string>Uzbekistan</string>
+				<string>Suriname</string>
+				<string>Bahrain</string>
+				<string>Martinique</string>
+				<string>Guadeloupe</string>
+				<string>Aruba</string>
+				<string>Macao China</string>
+			</array>
+		</dict>
+		<dict>
+			<key>correct answer</key>
+			<array>
+				<string>1990</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which year has the lowest average value?</string>
+			<key>answers</key>
+			<array>
+				<string>1950</string>
+				<string>1955</string>
+				<string>1960</string>
+				<string>1965</string>
+				<string>1970</string>
+				<string>1975</string>
+				<string>1980</string>
+				<string>1985</string>
+				<string>1990</string>
+				<string>1995</string>
+			</array>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>rank</string>
+			<key>correct answer</key>
+			<array>
+				<string>Macao China</string>
+				<string>Aruba</string>
+				<string>Bahrain</string>
+				<string>Martinique</string>
+				<string>Guadeloupe</string>
+				<string>Uzbekistan</string>
+				<string>Tajikistan</string>
+				<string>Suriname</string>
+				<string>Cape Verde</string>
+				<string>Mayotte</string>
+			</array>
+			<key>question</key>
+			<string>Order all countries for the year 2004 from lowest to highest.</string>
+			<key>answers</key>
+			<array>
+				<string>Cape Verde</string>
+				<string>Mayotte</string>
+				<string>Tajikistan</string>
+				<string>Uzbekistan</string>
+				<string>Suriname</string>
+				<string>Bahrain</string>
+				<string>Martinique</string>
+				<string>Guadeloupe</string>
+				<string>Aruba</string>
+				<string>Macao China</string>
+			</array>
+		</dict>
+		<dict>
+			<key>correct answer</key>
+			<array>
+				<string>58.47789344</string>
+				<string>102.6510177</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of values for Uzbekistan.</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>correct answer</key>
+			<array>
+				<string>Moldova</string>
+				<string>Latvia</string>
+				<string>Estonia</string>
+			</array>
+			<key>type</key>
+			<string>multi</string>
+			<key>question</key>
+			<string>Indicate three countries that follow a similar trend as Mexico.</string>
+			<key>answers</key>
+			<array>
+				<string>Guatemala</string>
+				<string>Russia</string>
+				<string>Venezuela</string>
+				<string>Kazakhstan</string>
+				<string>Estonia</string>
+				<string>Mexico</string>
+				<string>Dom. Rep.</string>
+				<string>Latvia</string>
+				<string>Moldova</string>
+				<string>Israel</string>
+			</array>
+		</dict>
+		<dict>
+			<key>correct answer</key>
+			<array>
+				<string>Estonia in 2004</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following data points is the lowest?</string>
+			<key>answers</key>
+			<array>
+				<string>Mayotte in 1955</string>
+				<string>Aruba in 1960</string>
+				<string>Uzbekistan in 1985</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

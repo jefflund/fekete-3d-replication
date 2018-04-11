@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>11.58661</string>
+				<string>19.5681</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of suicide rates for Sweden.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>correct answer</key>
+			<array>
+				<string>Ireland</string>
+				<string>Norway</string>
+				<string>Canada</string>
+				<string>New Zealand</string>
+				<string>Belgium</string>
+				<string>Sweden</string>
+				<string>Switzerland</string>
+				<string>Denmark</string>
+				<string>Finland</string>
+				<string>Japan</string>
+			</array>
+			<key>question</key>
+			<string>Order all countries from lowest suicide rate to highest for the year 1959.</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Finland</string>
+				<string>Denmark</string>
+				<string>Switzerland</string>
+				<string>Japan</string>
+				<string>Sweden</string>
+				<string>Belgium</string>
+				<string>Canada</string>
+				<string>New Zealand</string>
+				<string>Norway</string>
+				<string>Ireland</string>
+			</array>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Sweden in 1994</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following suicide rates is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>Switzerland in 1964</string>
+				<string>Sweden in 1994</string>
+				<string>Canada in 1984</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>16.66666667</string>
+				<string>43.33333333</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of agricultural land ratios for Maldives.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Ireland</string>
+				<string>Comoros</string>
+				<string>Gambia</string>
+				<string>China</string>
+				<string>Costa Rica</string>
+				<string>Paraguay</string>
+				<string>Guatemala</string>
+				<string>Maldives</string>
+				<string>Grenada</string>
+				<string>Puerto Rico</string>
+			</array>
+			<key>question</key>
+			<string>Order all countries from lowest to highest agricultural land ratio for the year 1992.</string>
+			<key>correct answer</key>
+			<array>
+				<string>Maldives</string>
+				<string>Grenada</string>
+				<string>Guatemala</string>
+				<string>Paraguay</string>
+				<string>Puerto Rico</string>
+				<string>Costa Rica</string>
+				<string>China</string>
+				<string>Gambia</string>
+				<string>Ireland</string>
+				<string>Comoros</string>
+			</array>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Maldives in 2000</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following agricultural land ratios is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>China in 1972</string>
+				<string>Paraguay in 1988</string>
+				<string>Maldives in 2000</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>5.31</string>
+				<string>31.15</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of CO2 emissions for Bahrain.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>correct answer</key>
+			<array>
+				<string>Gibraltar</string>
+				<string>Faeroe Islands</string>
+				<string>Singapore</string>
+				<string>New Caledonia</string>
+				<string>Bahrain</string>
+				<string>Kuwait</string>
+				<string>Bahamas</string>
+				<string>Luxembourg</string>
+				<string>Brunei</string>
+				<string>Qatar</string>
+			</array>
+			<key>question</key>
+			<string>Order all countries from lowest to highest CO2 emissions for the year 1972.</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Qatar</string>
+				<string>Luxembourg</string>
+				<string>Kuwait</string>
+				<string>Brunei</string>
+				<string>Bahrain</string>
+				<string>Bahamas</string>
+				<string>New Caledonia</string>
+				<string>Singapore</string>
+				<string>Faeroe Islands</string>
+				<string>Gibraltar</string>
+			</array>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Qatar in 1988</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following CO2 emissions is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>Qatar in 1988</string>
+				<string>Bahrain in 2000</string>
+				<string>Bahamas in 1976</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
