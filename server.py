@@ -35,8 +35,13 @@ def index():
 
 @app.route('/intro/<track>')
 def intro(track):
-    return flask.render_template('intro.html', next='data', track=track)
+    nxt = 'trans/{}/0'.format(track)
+    return flask.render_template('intro.html', next=nxt, track=track)
 
+
+@app.route('/trans/<track>/<idx>')
+def transition_page(track, idx):
+    return flask.render_template('transition.html', next='data', track=track, idx=idx)
 
 @app.route('/data')
 def digital_data():
