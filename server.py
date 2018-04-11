@@ -1,7 +1,19 @@
 import flask
-from flask import Flask
+from flask import Flask, request
 import subprocess
 import xml.etree.ElementTree as ET
+
+
+TRACKS = {'U1': ['TP', 'P1', 'TD', 'D2'],
+          'U2': ['TD', 'D1', 'TP', 'P2'],
+          'U3': ['TP', 'P2', 'TD', 'D1'],
+          'U4': ['TD', 'D2', 'TP', 'P1']}
+DATSETS = {'TP': 'homicide',
+           'P1': 'carmortality',
+           'P2': 'suicide',
+           'TD': 'co2',
+           'D1': 'army',
+           'D2': 'hiv'}
 
 
 # Helper Functions
@@ -39,9 +51,21 @@ def intro(track):
     return flask.render_template('intro.html', next=nxt, track=track)
 
 
-@app.route('/trans/<track>/<idx>')
+@app.route('/trans/<track>/<int:idx>')
 def transition_page(track, idx):
-    return flask.render_template('transition.html', next='data', track=track, idx=idx)
+    task = TRACKS[track][idx]
+    return flask.render_template('transition.html', next='data', track=track, task=task, idx=idx)
+
+
+@app.route('/physical/<track>', methods=['GET'])
+@app.route('/physical/train/<track>', methods=['GET'])
+def physical_data(track):
+    info = task_info(track)
+    print('TRACK:', track)
+    print('REQUEST:', request.url, request.path, request.args)
+    return flask.render_template('data.html', data=info)
+
+
 
 @app.route('/data')
 def digital_data():
