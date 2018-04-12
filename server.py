@@ -84,6 +84,8 @@ def intro(track, intro_idx=0):
     elif intro_idx == 2:
         return flask.render_template('intro-C.html', track=track)
     elif intro_idx == 3:
+        global graph_thingy
+        graph_thingy = subprocess.Popen(["python3", "plot.py", DATSETS['TD']])
         return flask.render_template('play-with-it-digital.html', track=track)
     elif intro_idx == 4:
         return flask.render_template('play-with-it-physical.html', track=track)
