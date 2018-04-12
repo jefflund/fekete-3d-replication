@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>6.925</string>
+				<string>19.49140808</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of homicide rates for Dom. Rep.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Venezuela</string>
+				<string>Dom. Rep.</string>
+				<string>Paraguay</string>
+				<string>Estonia</string>
+				<string>Mexico</string>
+				<string>Latvia</string>
+				<string>Kyrgyzstan</string>
+				<string>Argentina</string>
+				<string>Uzbekistan</string>
+				<string>Macedonia</string>
+			</array>
+			<key>correct answer</key>
+			<array>
+				<string>Macedonia</string>
+				<string>Uzbekistan</string>
+				<string>Argentina</string>
+				<string>Kyrgyzstan</string>
+				<string>Dom. Rep.</string>
+				<string>Latvia</string>
+				<string>Paraguay</string>
+				<string>Mexico</string>
+				<string>Estonia</string>
+				<string>Venezuela</string>
+			</array>
+			<key>question</key>
+			<string>Order all countries from lowest to highest homicide rate for the year 1999.</string>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Estonia in 2004</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following homicide rates is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>Venezuela in 1998</string>
+				<string>Estonia in 2004</string>
+				<string>Kyrgyzstan in 2000</string>
+			</array>
+			<key>colors</key>
+			<array>
+				<integer>2</integer>
+				<integer>4</integer>
+				<integer>8</integer>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

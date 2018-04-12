@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>0.589</string>
+				<string>6.495</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of car mortality rates for Costa Rica.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>correct answer</key>
+			<array>
+				<string>Ecuador</string>
+				<string>Korea Rep.</string>
+				<string>Brazil</string>
+				<string>Costa Rica</string>
+				<string>France</string>
+				<string>South Africa</string>
+				<string>Iceland</string>
+				<string>Spain</string>
+				<string>Estonia</string>
+				<string>Latvia</string>
+			</array>
+			<key>question</key>
+			<string>Order all countries from lowest to highest car mortality rate for the year 1998.</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Latvia</string>
+				<string>Estonia</string>
+				<string>Spain</string>
+				<string>Iceland</string>
+				<string>Brazil</string>
+				<string>South Africa</string>
+				<string>France</string>
+				<string>Ecuador</string>
+				<string>Korea Rep.</string>
+				<string>Costa Rica</string>
+			</array>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Korea Rep. in 2000</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following car mortality rates is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>Estonia in 2005</string>
+				<string>Brazil in 1998</string>
+				<string>Korea Rep. in 2000</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

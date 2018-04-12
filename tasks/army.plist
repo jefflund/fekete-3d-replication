@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>3.1956273</string>
+				<string>9.2542362</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of armed forces personnel ratios for Singapore.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Syria</string>
+				<string>Jordan</string>
+				<string>Singapore</string>
+				<string>Lebanon</string>
+				<string>Brunei</string>
+				<string>Bahrain</string>
+				<string>Cambodia</string>
+				<string>Croatia</string>
+				<string>Libya</string>
+				<string>Azerbaijan</string>
+			</array>
+			<key>correct answer</key>
+			<array>
+				<string>Azerbaijan</string>
+				<string>Libya</string>
+				<string>Croatia</string>
+				<string>Brunei</string>
+				<string>Cambodia</string>
+				<string>Lebanon</string>
+				<string>Bahrain</string>
+				<string>Singapore</string>
+				<string>Syria</string>
+				<string>Jordan</string>
+			</array>
+			<key>question</key>
+			<string>Order all countries from lowest to highest for the year 2000.</string>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Cambodia in 2001</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following armed forces personnel ratios is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>Lebanon in 1993</string>
+				<string>Cambodia in 2001</string>
+				<string>Libya in 1996</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

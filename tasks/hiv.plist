@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>5.4</string>
+				<string>10.5</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of HIV prevalence for Kenya.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Zimbabwe</string>
+				<string>Botswana</string>
+				<string>Lesotho</string>
+				<string>Swaziland</string>
+				<string>South Africa</string>
+				<string>Namibia</string>
+				<string>Mozambique</string>
+				<string>Kenya</string>
+				<string>Uganda</string>
+				<string>Malawi</string>
+			</array>
+			<key>correct answer</key>
+			<array>
+				<string>Uganda</string>
+				<string>Kenya</string>
+				<string>Mozambique</string>
+				<string>Malawi</string>
+				<string>Namibia</string>
+				<string>South Africa</string>
+				<string>Zimbabwe</string>
+				<string>Lesotho</string>
+				<string>Swaziland</string>
+				<string>Botswana</string>
+			</array>
+			<key>question</key>
+			<string>Order all countries from lowest to highest HIV prevalence for the year 2003.</string>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Zimbabwe in 2009</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following HIV prevalences is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>Botswana in 1995</string>
+				<string>South Africa in 2003</string>
+				<string>Zimbabwe in 2009</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

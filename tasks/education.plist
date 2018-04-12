@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>6.076384106</string>
+				<string>17.98184525</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of education aid ratios for Italy.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>question</key>
+			<string>Order all countries from lowest to highest education aid ratio for the year 1990.</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Austria</string>
+				<string>France</string>
+				<string>Australia</string>
+				<string>Belgium</string>
+				<string>Canada</string>
+				<string>Netherlands</string>
+				<string>Italy</string>
+				<string>Denmark</string>
+				<string>United States</string>
+				<string>Norway</string>
+			</array>
+			<key>correct answer</key>
+			<array>
+				<string>Denmark</string>
+				<string>Norway</string>
+				<string>Italy</string>
+				<string>United States</string>
+				<string>Netherlands</string>
+				<string>Belgium</string>
+				<string>Canada</string>
+				<string>Austria</string>
+				<string>France</string>
+				<string>Australia</string>
+			</array>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Canada in 1996</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following education aid ratios is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>Belgium in 1991</string>
+				<string>Canada in 1996</string>
+				<string>Italy in 1993</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,8 +1,9 @@
 import csv
-
+import argparse
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+
 
 def plot_the_stupid_dataset_in_glorious_3d(dataset_name='agriculturalland'):
     # Load raw data from csv
@@ -10,8 +11,8 @@ def plot_the_stupid_dataset_in_glorious_3d(dataset_name='agriculturalland'):
     meta = [row.strip() for row in open('datasets/{}.metadata'.format(dataset_name))]
 
     # Load data from csv
-    xkeys, raw = raw[0][1:], raw[1:]
-    ykeys = [row[0] for row in raw]
+    ykeys, raw = raw[0][1:], raw[1:]
+    xkeys = [row[0] for row in raw]
     data = np.array([[float(x) for x in row[1:]] for row in raw])
 
     # Load colors from metadata
@@ -99,5 +100,12 @@ def plot_the_stupid_dataset_in_glorious_3d(dataset_name='agriculturalland'):
 
     plt.show()
 
+
 if __name__ == '__main__':
-    plot_the_stupid_dataset_in_glorious_3d()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('dataset', nargs='?', help='the name of the dataset to use')
+    args = parser.parse_args()
+    if not args.dataset:
+        plot_the_stupid_dataset_in_glorious_3d()
+    else:
+        plot_the_stupid_dataset_in_glorious_3d(args.dataset)

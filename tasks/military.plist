@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>0.83665955</string>
+				<string>5.721950418</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of military expenditures for Sudan.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>correct answer</key>
+			<array>
+				<string>Georgia</string>
+				<string>Macedonia</string>
+				<string>Zimbabwe</string>
+				<string>Sudan</string>
+				<string>Croatia</string>
+				<string>Brunei</string>
+				<string>Kuwait</string>
+				<string>Ethiopia</string>
+				<string>Saudi Arabia</string>
+				<string>Angola</string>
+			</array>
+			<key>question</key>
+			<string>Order all countries from lowest to highest military expenditures for the year 1999.</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Saudi Arabia</string>
+				<string>Kuwait</string>
+				<string>Zimbabwe</string>
+				<string>Sudan</string>
+				<string>Georgia</string>
+				<string>Macedonia</string>
+				<string>Croatia</string>
+				<string>Brunei</string>
+				<string>Ethiopia</string>
+				<string>Angola</string>
+			</array>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Croatia in 2005</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following military expenditures is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>Macedonia in 1998</string>
+				<string>Croatia in 2005</string>
+				<string>Ethiopia in 1997</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

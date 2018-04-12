@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>8.8</string>
+				<string>13.4</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of health expense rates for Tuvalu.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Malawi</string>
+				<string>Timor-Leste</string>
+				<string>Tuvalu</string>
+				<string>Lebanon</string>
+				<string>Zimbabwe</string>
+				<string>Guinea-Bissau</string>
+				<string>Maldives</string>
+				<string>Botswana</string>
+				<string>Rwanda</string>
+				<string>Iraq</string>
+			</array>
+			<key>correct answer</key>
+			<array>
+				<string>Iraq</string>
+				<string>Rwanda</string>
+				<string>Guinea-Bissau</string>
+				<string>Botswana</string>
+				<string>Maldives</string>
+				<string>Zimbabwe</string>
+				<string>Malawi</string>
+				<string>Timor-Leste</string>
+				<string>Tuvalu</string>
+				<string>Lebanon</string>
+			</array>
+			<key>question</key>
+			<string>Order all countries from lowest to highest health expense rate for the year 1999.</string>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Botswana in 1998</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following health expense rates is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>Rwanda in 2003</string>
+				<string>Zimbabwe in 2001</string>
+				<string>Botswana in 1998</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

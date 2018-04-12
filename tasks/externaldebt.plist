@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<array>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>193.8742593</string>
+				<string>479.740547</string>
+			</array>
+			<key>type</key>
+			<string>two-bar</string>
+			<key>question</key>
+			<string>Indicate the range of external debt rates for Congo Rep.</string>
+			<key>name</key>
+			<string>range</string>
+			<key>answers</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<true/>
+			<key>type</key>
+			<string>rank</string>
+			<key>question</key>
+			<string>Order all countries from lowest to highest external debt rates for the year 1997.</string>
+			<key>name</key>
+			<string>order</string>
+			<key>answers</key>
+			<array>
+				<string>Guinea-Bissau</string>
+				<string>Congo Rep.</string>
+				<string>Guyana</string>
+				<string>Nicaragua</string>
+				<string>Mozambique</string>
+				<string>Angola</string>
+				<string>Yemen</string>
+				<string>Eritrea</string>
+				<string>Argentina</string>
+				<string>Burundi</string>
+			</array>
+			<key>correct answer</key>
+			<array>
+				<string>Eritrea</string>
+				<string>Argentina</string>
+				<string>Yemen</string>
+				<string>Burundi</string>
+				<string>Angola</string>
+				<string>Nicaragua</string>
+				<string>Mozambique</string>
+				<string>Guyana</string>
+				<string>Congo Rep.</string>
+				<string>Guinea-Bissau</string>
+			</array>
+		</dict>
+		<dict>
+			<key>useColors</key>
+			<false/>
+			<key>correct answer</key>
+			<array>
+				<string>Mozambique in 2000</string>
+			</array>
+			<key>type</key>
+			<string>radio</string>
+			<key>question</key>
+			<string>Which of the following debt rates is the lowest?</string>
+			<key>name</key>
+			<string>choice</string>
+			<key>answers</key>
+			<array>
+				<string>Congo Rep. in 2003</string>
+				<string>Nicaragua in 1997</string>
+				<string>Mozambique in 2000</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
