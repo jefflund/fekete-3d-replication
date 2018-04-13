@@ -23,6 +23,12 @@ TRANS_ROUTE = {'TP': 'physical/train/',
                'D2': 'digital/'}
 
 
+# create server
+app = Flask(__name__)
+graph_thingy = None
+start_time = None
+
+
 # Helper Functions
 def el_val(k,v):
     def _element_value(el):
@@ -57,15 +63,19 @@ def data_nxt(track, idx):
     return 'trans/{}/{}'.format(track, idx+1)
 
 
-# create server
-app = Flask(__name__)
-graph_thingy = None
-start_time = None
-
-
 def clean_up():
     if graph_thingy:
         graph_thingy.kill()
+
+
+def log_time(track, idx):
+    global start_time
+    if start_time:
+        end_time = datetime.datetime.now()
+        diff = (end_time - start_time).total_seconds()
+        with open('time_logs.txt', 'a+') as f:
+            f.write(track + ', ' + str(idx) + ', ' + str(diff) + '\r\n')
+        start_time = None
 
 
 # server routing
@@ -96,13 +106,7 @@ def intro(track, intro_idx=0):
 @app.route('/trans/<track>/<int:idx>')
 def transition_page(track, idx):
     clean_up()
-    global start_time
-    if start_time:
-        end_time = datetime.datetime.now()
-        diff = (end_time - start_time).total_seconds()
-        with open('time_logs.txt', 'a+') as f:
-            f.write(track + ', ' + str(idx) + ', ' + str(diff))
-        start_time = None
+    log_time(track, idx)
     task = TRACKS[track][idx]
     info = task_info(DATSETS[task])
     nxt = TRANS_ROUTE[task] + track
@@ -140,13 +144,7 @@ def digital_data(track):
 @app.route('/finish/<track>/<int:idx>')
 def finish(track, idx):
     clean_up()
-    global start_time
-    if start_time:
-        end_time = datetime.datetime.now()
-        diff = (end_time - start_time).total_seconds()
-        with open('time_logs.txt', 'a+') as f:
-            f.write(track + ', ' + str(idx) + ', ' + str(diff))
-        start_time = None
+    log_time(track, idx)
     return flask.render_template('finish.html')
 
 
