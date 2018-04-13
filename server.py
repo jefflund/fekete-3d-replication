@@ -95,8 +95,9 @@ def intro(track, intro_idx=0):
 def transition_page(track, idx):
     clean_up()
     task = TRACKS[track][idx]
+    info = task_info(DATSETS[task])
     nxt = TRANS_ROUTE[task] + track
-    return flask.render_template('transition.html', next=nxt, track=track, task=task, idx=idx)
+    return flask.render_template('transition.html', next=nxt, data=info)
 
 
 @app.route('/physical/<track>', methods=['GET'])

@@ -23,11 +23,23 @@
       Task Instructions
     </div>
     <div class="card-body">
-      Track = {{ track }}
-      <br>
-      Your next task is:
-      <br>
-      {{ task }}
+      You will now practice answering questions with this bar chart representation.
+      During training, the experimenter will be here to assist you and answer questions.
+      <br><br>
+      Take your time to read each question and make sure you know what to search for
+      on the bar chart before you press <div class="btn btn-success">Start</div>.
+      And remember: do not look at the bar chart before you press <div class="btn btn-success">Start</div>.
+      Instead, refer to the bar chart image below the question.
+      <br><br>
+      <h5 class="card-title">{{ data['question'] }}</h5>
+      <img src="/static/sample-graph.png">
+      <br><br>
+      Once you press <div class="btn btn-success">Start</div>,
+      try to be as fast and accurate as possible to get your answer and do not rest
+      until you enter your answer and press <div class="btn btn-primary">Done</div>.
+      <br><br>
+      Once you are ready, please press <div class="btn btn-success">Start</div>.
+
     </div>
     <div class="card-footer">
       <form action="/{{ next }}">
