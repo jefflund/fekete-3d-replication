@@ -118,7 +118,8 @@ def transition_page(track, idx):
     task = TRACKS[track][idx]
     info = task_info(DATSETS[task])
     nxt = TRANS_ROUTE[task] + track
-    return flask.render_template('transition.html', next=nxt, data=info)
+    tr = is_training(track, idx)
+    return flask.render_template('transition.html', next=nxt, data=info, training=tr)
 
 
 @app.route('/physical/<track>', methods=['GET'])
@@ -128,9 +129,10 @@ def physical_data(track):
     task, idx = get_task(track)
     info = task_info(DATSETS[task])
     nxt = data_nxt(track, idx)
+    tr = is_training(track, idx)
     global start_time
     start_time = datetime.datetime.now()
-    return flask.render_template('data.html', data=info, next=nxt)
+    return flask.render_template('data.html', data=info, next=nxt, training=tr)
 
 
 @app.route('/digital/<track>', methods=['GET'])
@@ -144,9 +146,10 @@ def digital_data(track):
     graph_thingy = subprocess.Popen(["python3", "plot.py", DATSETS[task]])
     # return the page
     nxt = data_nxt(track, idx)
+    tr = is_training(track, idx)
     global start_time
     start_time = datetime.datetime.now()
-    return flask.render_template('data.html', data=info, next=nxt)
+    return flask.render_template('data.html', data=info, next=nxt, training=tr)
 
 
 @app.route('/finish/<track>/<int:idx>')
