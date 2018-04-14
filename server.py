@@ -74,7 +74,7 @@ def log_time(track, idx):
         end_time = datetime.datetime.now()
         diff = (end_time - start_time).total_seconds()
         with open('time_logs.txt', 'a+') as f:
-            f.write(_csv(track, idx, start_time, end_time, diff, is_training(track, idx)))
+            f.write(_csv(track, idx-1, start_time, end_time, diff, is_training(track, idx-1)))
         start_time = None
 
 

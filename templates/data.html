@@ -13,7 +13,11 @@
   </head>
 <body>
 <div class="container">
+  {% if training %}
+  <form class="card border-info" action="/{{ next }}">
+  {% else %}
   <form class="card" action="/{{ next }}">
+  {% endif %}
     <div class="card-header">
       {{ data['question'] }}
     </div>

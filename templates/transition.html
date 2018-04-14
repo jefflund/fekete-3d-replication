@@ -18,12 +18,16 @@
 </head>
 <body>
 <div class="container">
+  {% if training %}
+  <div class="card border-info">
+  {% else %}
   <div class="card">
+  {% endif %}
     <div class="card-header">
       Task Instructions
     </div>
     <div class="card-body">
-      {% if training == True %}
+      {% if training  %}
       You will now practice answering questions with this bar chart representation.
       During training, the experimenter will be here to assist you and answer questions.
       <br><br>
