@@ -69,17 +69,20 @@ def clean_up():
 
 
 def log_time(track, idx):
+    print(request.args)
     global start_time
     if start_time:
         end_time = datetime.datetime.now()
         diff = (end_time - start_time).total_seconds()
         with open('time_logs.txt', 'a+') as f:
-            f.write(_csv(track, idx-1, start_time, end_time, diff, is_training(track, idx-1)))
+            tr = is_training(track, idx-1)
+            ans = request.args.get('response')
+            f.write(_csv(track, idx-1, start_time, end_time, diff, tr, ans))
         start_time = None
 
 
 def _csv(*items):
-    return ''.join(str(i)+', ' for i in items)+'\r\n'
+    return ''.join(str(i)+', ' for i in items)[:-2]+'\r\n'
 
 
 def is_training(track, idx):
