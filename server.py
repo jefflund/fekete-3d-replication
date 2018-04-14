@@ -23,6 +23,12 @@ TRANS_ROUTE = {'TP': 'physical/train/',
                'D2': 'digital/'}
 
 
+# create server
+app = Flask(__name__)
+graph_thingy = None
+start_time = None
+
+
 # Helper Functions
 def el_val(k,v):
     def _element_value(el):
@@ -57,15 +63,30 @@ def data_nxt(track, idx):
     return 'trans/{}/{}'.format(track, idx+1)
 
 
-# create server
-app = Flask(__name__)
-graph_thingy = None
-start_time = None
-
-
 def clean_up():
     if graph_thingy:
         graph_thingy.kill()
+
+
+def log_time(track, idx):
+    print(request.args)
+    global start_time
+    if start_time:
+        end_time = datetime.datetime.now()
+        diff = (end_time - start_time).total_seconds()
+        with open('time_logs.txt', 'a+') as f:
+            tr = is_training(track, idx-1)
+            ans = request.args.get('response')
+            f.write(_csv(track, idx-1, start_time, end_time, diff, tr, ans))
+        start_time = None
+
+
+def _csv(*items):
+    return ''.join(str(i)+', ' for i in items)[:-2]+'\r\n'
+
+
+def is_training(track, idx):
+    return TRACKS[track][idx] == 'TP' or TRACKS[track][idx] == 'TD'
 
 
 # server routing
@@ -96,17 +117,12 @@ def intro(track, intro_idx=0):
 @app.route('/trans/<track>/<int:idx>')
 def transition_page(track, idx):
     clean_up()
-    global start_time
-    if start_time:
-        end_time = datetime.datetime.now()
-        diff = (end_time - start_time).total_seconds()
-        with open('time_logs.txt', 'a+') as f:
-            f.write(track + ', ' + str(idx) + ', ' + str(diff))
-        start_time = None
+    log_time(track, idx)
     task = TRACKS[track][idx]
     info = task_info(DATSETS[task])
     nxt = TRANS_ROUTE[task] + track
-    return flask.render_template('transition.html', next=nxt, data=info)
+    tr = is_training(track, idx)
+    return flask.render_template('transition.html', next=nxt, data=info, training=tr)
 
 
 @app.route('/physical/<track>', methods=['GET'])
@@ -116,9 +132,10 @@ def physical_data(track):
     task, idx = get_task(track)
     info = task_info(DATSETS[task])
     nxt = data_nxt(track, idx)
+    tr = is_training(track, idx)
     global start_time
     start_time = datetime.datetime.now()
-    return flask.render_template('data.html', data=info, next=nxt)
+    return flask.render_template('data.html', data=info, next=nxt, training=tr)
 
 
 @app.route('/digital/<track>', methods=['GET'])
@@ -132,21 +149,16 @@ def digital_data(track):
     graph_thingy = subprocess.Popen(["python3", "plot.py", DATSETS[task]])
     # return the page
     nxt = data_nxt(track, idx)
+    tr = is_training(track, idx)
     global start_time
     start_time = datetime.datetime.now()
-    return flask.render_template('data.html', data=info, next=nxt)
+    return flask.render_template('data.html', data=info, next=nxt, training=tr)
 
 
 @app.route('/finish/<track>/<int:idx>')
 def finish(track, idx):
     clean_up()
-    global start_time
-    if start_time:
-        end_time = datetime.datetime.now()
-        diff = (end_time - start_time).total_seconds()
-        with open('time_logs.txt', 'a+') as f:
-            f.write(track + ', ' + str(idx) + ', ' + str(diff))
-        start_time = None
+    log_time(track, idx)
     return flask.render_template('finish.html')
 
 
