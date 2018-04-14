@@ -74,8 +74,16 @@ def log_time(track, idx):
         end_time = datetime.datetime.now()
         diff = (end_time - start_time).total_seconds()
         with open('time_logs.txt', 'a+') as f:
-            f.write(track + ', ' + str(idx) + ', ' + str(diff) + '\r\n')
+            f.write(_csv(track, idx, start_time, end_time, diff, is_training(track, idx)))
         start_time = None
+
+
+def _csv(*items):
+    return ''.join(str(i)+', ' for i in items)+'\r\n'
+
+
+def is_training(track, idx):
+    return TRACKS[track][idx] == 'TP' or TRACKS[track][idx] == 'TD'
 
 
 # server routing
